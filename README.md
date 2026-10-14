@@ -1,221 +1,144 @@
-# Awesome-Email-Spreadsheet-On-Schedule
-
-## Top Email Spreadsheet on Schedule Ecosystem
-
-
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-
-*Focused on Scheduled Report Delivery, Spreadsheet-to-Email Automation & Data Sync*  
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Email Spreadsheet on Schedule**. These tools enable anyone to automatically generate spreadsheets or reports from databases, SaaS platforms, and internal systems—then deliver them via email on a recurring schedule.
-
-
-
-**Examples** include Sheetgo, Coefficient, Supermetrics, Klipfolio, Coupler.io, Zapier, Make, Rows, Actiondesk, and Databox (the category leaders).
-
-
-
-**Open-source emphasis**: This section is heavily expanded with every major active project for self-hosting, scheduled report generation, and open automation platforms—ideal for operations teams, analysts, and developers seeking transparent, vendor-independent report delivery.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[Sheetgo](https://www.sheetgo.com/)**  
-
-  Workflow automation platform for spreadsheets. Connects Google Sheets, Excel, and databases to automate data transfers with 15+ features. Free tier available; paid plans for larger volumes .
-
-
-
-- **[Coefficient](https://coefficient.io/)**  
-
-  Data connector and automation platform for Google Sheets and Excel. Syncs data from CRMs, databases, and SaaS tools on a schedule. Freemium pricing .
-
-
-
-- **[Supermetrics](https://supermetrics.com/)**  
-
-  Marketing analytics platform connecting 150+ platforms into Google Sheets, Excel, and BI tools. Trusted by 200K+ organizations .
-
-
-
-- **[Klipfolio](https://www.klipfolio.com/)**  
-
-  Business dashboard platform with scheduled email reports. Connects to 100+ data sources.
-
-
-
-- **[Coupler.io](https://www.coupler.io/)**  
-
-  All-in-one data analytics and automation platform. Syncs data from 60+ sources to Google Sheets, Excel, and BI tools with scheduled refreshes .
-
-
-
-- **[Zapier](https://zapier.com/)**  
-
-  Workflow automation connecting 6,000+ apps. Google Sheets triggers can send emails, create reports, and schedule deliveries. Free tier for basic automations .
-
-
-
-- **[Make (Integromat)](https://make.com/)**  
-
-  Visual workflow automation with Google Sheets and email integrations. Supports scheduled scenarios and AI-powered content generation .
-
-
-
-- **[Rows](https://rows.com/)**  
-
-  Spreadsheet with built-in data integrations and scheduling. Connects to APIs, databases, and SaaS tools with automated refresh .
-
-
-
-- **[Actiondesk](https://www.actiondesk.io/)**  
-
-  Spreadsheet automation platform pulling live data from databases and SaaS tools with scheduled refreshes.
-
-
-
-- **[Databox](https://databox.com/)**  
-
-  Business analytics platform with scheduled email reports. Connects 130+ data sources and delivers dashboards via email.
-
-
-
-## Open-Source GitHub Projects
-
-
-
-- **[report (peterydd)](https://github.com/peterydd/report)**  
-
-  Open-source Go program that queries databases (Oracle, MySQL, PostgreSQL), writes results to Excel, and emails reports on a schedule . **The most directly applicable open-source scheduled report tool available.** Configuration via YAML with support for multiple sheet pages, column mapping, sum calculations, and email recipients (to/cc/bcc). Deployable as **Kubernetes CronJob** with `schedule: "*/30 * * * *"` and `concurrencyPolicy: Forbid` . Docker image available (`peterydd/report`). **The most production-ready open-source solution for database-to-Excel-to-email reporting.**
-
-
-
-- **[Scheduled Export by Email (Odoo)](https://apps.odoo.com/apps/modules/19.0/scheduled_filter_export)**  
-
-  Open-source Odoo module (LGPL-3) for scheduled report delivery . Pick any model, apply filters, choose columns, set schedule and recipients. **Hourly cron builds the file and mails it as attachment.** Features **Run As user permissions**—recipients see exactly what that user is allowed to see, nothing more. CSV always, Excel when `xlsxwriter` installed. Truncation warnings at 5000 rows. Empty results send no email. **The most permission-aware open-source scheduled report module.**
-
-
-
-- **[Auto-Excel-Reports (Bwhiz)](https://github.com/Bwhiz/Auto-Excel-Reports)**  
-
-  Open-source scripts and workflows using Python's `openpyxl` for Excel report generation with **GitHub Actions scheduling** . Features scheduled execution via cron (`'0 0 * * *'`), email distribution via SMTP, and environment variables via GitHub Secrets. **The most GitHub-native open-source approach**—no servers to manage, just push and let Actions run.
-
-
-
-- **[mailgrid (bravo1goingdark)](https://github.com/bravo1goingdark/mailgrid)**  
-
-  Ultra-lightweight, high-throughput email automation CLI in Go (BSD-3-Clause) . Reads recipients from **CSV or Google Sheet** and delivers emails via SMTP with **concurrency, rate-limiting, and optional scheduling**. **13 GitHub stars**. Designed without bloat—single binary deployment. **The most focused open-source tool for spreadsheet-to-email delivery.**
-
-
-
-- **[ERPNext Auto Email Reports](https://docs.frappe.io/erpnext/auto-email-reports)**  
-
-  Open-source ERP (GPL-3.0) with **built-in Auto Email Report** functionality . Configure any saved report (Report Builder, Script, or Query Report) to send at regular intervals (daily/weekly/monthly/yearly). Features **per-user permissions**, filter application, row limits (max 500), and format options (HTML, XLSX, CSV). Emails sent at midnight. **The most mature open-source ERP-native scheduled reporting.**
-
-
-
-- **[n8n](https://github.com/n8n-io/n8n)**  
-
-  Open-source workflow automation platform (Sustainable Use License) with Google Sheets and email nodes . **Runs every minute watching linked Google Sheet** for automated responses and notifications. Self-hostable with Docker (`docker run -it --rm --name n8n -p 5678:5678 n8nio/n8n`) . Custom code nodes for JavaScript/Python transformation. Error handling with retries and fallback paths. **The most flexible open-source automation platform for spreadsheet-to-email workflows.**
-
-
-
-- **[AI_multi_AGENT_N8N (NexusAgent)](https://github.com/ziadnasar6-lgtm/AI_multi_AGENT_N8N)**  
-
-  Open-source multi-agent automation system built on n8n (MIT) . **Central Orchestrator Agent** with specialized sub-agents: **Meeting Management** (queries Google Sheets, sends Gmail reminders, provisions Calendar events), **Database & Sheet Agent** (reads/appends/updates Google Sheets records), **Email Agent** (retrieves messages, sends status updates), **Web Exploration Agent** (live search + Calendar actions). Powered by **Ollama** local LLMs. Telegram interface for hands-free control. **The most advanced open-source agent-based spreadsheet/email automation.**
-
-
-
-- **[outreach-os](https://www.npmjs.com/package/outreach-os)**  
-
-  Open-source N8N workflow collection for B2B outreach (MIT) . **Lead Search & Scoring Engine** (Google Places → 100-point scoring → Google Sheets), **AI Email Automation** (GLM-4 generated emails → Gmail), **Email Reply Tracker & Auto Follow-Up** (daily Gmail checks, 3-day follow-up). Full status tracking in Google Sheets: Pending → Emailed → Replied/FollowedUp. **The most complete open-source outreach automation with spreadsheet tracking.**
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **[Ethersheet](https://github.com/ether/ethersheet)** — Open-source collaborative spreadsheet (Apache-2.0) for team data editing before scheduled export .
-
-- **[ONLYOFFICE](https://github.com/ONLYOFFICE/CommunityServer)** — Open-source office suite (AGPL-3.0) with spreadsheet editing and integration capabilities .
-
-- **[LibreOffice Calc](https://github.com/LibreOffice/core)** — Open-source spreadsheet (MPL-2.0) with macro support for scripted report generation .
-
-- **[NocoDB](https://github.com/nocodb/nocodb)** — Open-source Airtable alternative (AGPL-3.0) with API access for scheduled data export .
-
-- Community **n8n** workflows for spreadsheet-to-email scheduling and multi-step approval routing.
-
-
-
-**Frameworks for building custom systems**: Combine **report (peterydd)** for database-to-Excel-to-email with **Scheduled Export by Email** for permission-aware report delivery, **mailgrid** for lightweight CSV-to-email, **n8n** for workflow orchestration, and **PostgreSQL** for persistence—creating a fully self-hosted, enterprise-grade scheduled report platform.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- Scheduled report systems handling business data must comply with data protection regulations (GDPR, CCPA, etc.) and email sending regulations (CAN-SPAM, SPF/DKIM/DMARC).
-
-- **Open-source scheduled reporting is mature for database-to-Excel workflows.** `report (peterydd)` provides production-ready Kubernetes CronJob deployment . Odoo's Scheduled Export by Email adds permission-aware delivery . ERPNext includes Auto Email Reports natively . **These are genuine alternatives to Sheetgo and Coupler.io for internal reporting.**
-
-- **n8n is the most flexible open-source automation platform.** With 400+ integrations, custom code nodes, and self-hosting via Docker, it can replicate most SaaS automation workflows . The trade-off is setup and maintenance effort compared to managed platforms.
-
-- **GitHub Actions provides serverless scheduling.** Auto-Excel-Reports demonstrates cron-based report generation and email delivery without managing servers . Ideal for teams already using GitHub.
-
-- Self-hosted open-source solutions require proper security hardening, email deliverability configuration, and ongoing maintenance. Scheduled reports may contain sensitive data—ensure access controls and audit trails are in place.
-
-
+# Awesome Email Spreadsheet On Schedule 📊 ⏰
+
+<p align="center">
+  <img src="./assets/banner.svg" alt="Awesome Email Spreadsheet On Schedule Banner" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule?style=social" alt="GitHub Stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule?style=social" alt="GitHub Forks" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" /></a>
+  <a rref="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
 
 ---
 
+> **A curated collection of SaaS platforms, automation engines, and open-source tools for automated spreadsheet generation, scheduled report delivery, and recurring data synchronization via email.** 🚀
 
+Whether you are looking for zero-code SaaS tools like Zapier and Make, purpose-built spreadsheet connectors like Sheetgo and Coefficient, or self-hosted open-source pipelines like n8n and Apache Superset, this directory indexes solutions to automate your reporting workflows.
 
-**Made for operations teams, analysts, and developers building transparent scheduled reporting solutions.**  
+---
 
-Let's make Email Spreadsheet on Schedule more open, data-driven, and reliable.
+## 📑 Table of Contents
+- [🌐 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [💼 SaaS & Hosted Platforms](#-saas--hosted-platforms)
+- [💻 Open-Source GitHub Projects](#-open-source-github-projects)
+- [🛠️ Architectural Patterns & Stack Recipes](#️-architectural-patterns--stack-recipes)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [⭐ Star History](#-star-history)
+- [💖 Support](#-support)
+- [📜 Disclaimer](#-disclaimer)
+
+---
+
+## 🌐 Sector Overview & Market Dynamics
+
+The global workflow and spreadsheet automation market represents an estimated **$21.5B to $29.9B** sector expanding rapidly at a **11%–16% CAGR** toward **$65B–$87B+ by the early 2030s**. The space remains **moderately fragmented** rather than winner-take-all: while horizontal workflow giants like Zapier and Celonis/Make command substantial market capitalization, specialized spreadsheet sync engines (e.g., Coefficient, Supermetrics) and extensible self-hosted open-source platforms (e.g., n8n, Apache Superset) retain distinct market share due to specialized connector breadth, regulatory compliance, data privacy, and self-hosting requirements.
+
+---
+
+## 💼 SaaS & Hosted Platforms
+
+The table below catalogs leading SaaS platforms for scheduled spreadsheet and email report delivery, ranked in descending order by estimated company size (valuation / revenue).
+
+| Platform 🏷️ | Scale & Valuation 📈 | Starting Price 💳 | Free Tier & Trial Limits ⏳ | Core Capabilities 🔍 |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Make (Celonis)](https://make.com/)** | **$13B valuation** (~$700M+ ARR) | **$9.00 / month** (billed annually) or $10.59/mo | **Free forever**: 1,000 operations/month, 2 active scenarios, 15-minute sync interval, 100 MB data transfer. | Visual workflow builder with multi-step logic, router branching, and native Google Sheets/email connectors. |
+| **[Zapier](https://zapier.com/)** | **$5B valuation** (~$310M ARR) | **$19.99 / month** (billed annually) or $29.99/mo | **Free forever**: 100 tasks/month, 2-step single-trigger/action Zaps only, 15-minute sync interval. | Integrates 6,000+ apps; schedules automated sheet exports, CSV generation, and email dispatches. |
+| **[Supermetrics](https://supermetrics.com/)** | **$280M valuation** (~$89.5M ARR) | **$37.00 / month** (billed annually) | **14-day free trial** (Full feature access, 1 destination, up to 3 data sources); No permanent free plan. | Marketing data pipeline pulling metrics from 150+ ad & analytics platforms directly into Sheets/Excel. |
+| **[Coefficient](https://coefficient.io/)** | **$72M valuation** ($24.7M funded) | **$49.00 / month** (Starter plan) | **Free forever**: 1 user, up to 3 data sources, 5,000 rows max per import, manual refresh only (no automated schedule). | Real-time bidirectional connectors syncing CRMs, databases, and warehouses into Google Sheets & Excel. |
+| **[Rows](https://rows.com/)** | **$43.7M funding** (~$35M+ est. valuation) | **$59.00 / workspace / month** (Plus plan) | **Free forever**: Unlimited spreadsheets, 500 API calls/month, 5 AI tasks/month, 10 integrations, 1 MB import cap. | Next-gen spreadsheet with native API integrations, built-in AI analyst, and scheduled report automation. |
+| **[Databox](https://databox.com/)** | **$20.5M revenue** ($4.8M funded) | **$71.00 / month** (Analyst tier) | **Free forever**: 1 user, 3 data sources, 1 dashboard, 50 AI credits, daily scheduled data sync. | Unified business analytics and KPI dashboard suite offering automated daily/weekly email scorecards. |
+| **[Klipfolio](https://www.klipfolio.com/)** | **$14M revenue** ($17.3M funded) | **$140.00 / month** (Klips team plan) | **Free forever (PowerMetrics)**: Up to 2 data services, 5 custom metrics, 4-hour sync; **14-day free trial** on Klips. | Metric monitoring and executive dashboard platform with scheduled PDF/image snapshot email delivery. |
+| **[Sheetgo](https://www.sheetgo.com/)** | **$8M valuation** (~$2M–$4M ARR) | **$35.00 / month** (billed annually) or $50/mo | **Free forever**: Basic file size limits, up to 99 transfers/month, 1 active automation, manual & basic sync. | Connects Google Sheets, Excel, CSV, and SQL databases to construct automated multi-sheet data workflows. |
+| **[Actiondesk](https://www.actiondesk.io/)** | **Acquired by Datadog** ($4.1M funded) | Included in Datadog platform tiers | **14-day free trial** (Datadog full trial including telemetry and live spreadsheet views); No standalone free plan. | Real-time database and data warehouse query interface formatted as an auto-refreshing spreadsheet. |
+| **[Coupler.io](https://www.coupler.io/)** | **$3.6M est. valuation** (~$1.5M ARR) | **$32.00 / month** (billed annually) or $40/mo | **7-day free trial** (Full active plan features, 15 sources); **Free forever tier**: 1 account connection, 100 runs/month. | Data integration tool automating exports from 60+ platforms to Google Sheets, Excel, and BI tools. |
+
+---
+
+## 💻 Open-Source GitHub Projects
+
+The following open-source solutions provide self-hosted scheduled report generation, spreadsheet querying, and automated email delivery. Ranked in descending order by GitHub stars ⭐.
+
+| Project 📦 | Stars ⭐ | Primary Language 🖥️ | License 📄 | Overview & Scheduling Architecture ⚙️ |
+| :--- | :--- | :--- | :--- | :--- |
+| **[n8n](https://github.com/n8n-io/n8n)** | [![Stars](https://img.shields.io/github/stars/n8n-io/n8n?style=social&color=white)](https://github.com/n8n-io/n8n/stargazers) | TypeScript | Sustainable Use License | Fair-code workflow automation orchestrator. Offers native Google Sheets nodes, email delivery (SMTP/SES), cron triggers, and Python/JS transform steps. |
+| **[Apache Superset](https://github.com/apache/superset)** | [![Stars](https://img.shields.io/github/stars/apache/superset?style=social&color=white)](https://github.com/apache/superset/stargazers) | Python / TypeScript | Apache-2.0 | Modern enterprise business intelligence platform. Features scheduled email reports sending CSV, Excel, or dashboard snapshots via Celery workers. |
+| **[NocoDB](https://github.com/nocodb/nocodb)** | [![Stars](https://img.shields.io/github/stars/nocodb/nocodb?style=social&color=white)](https://github.com/nocodb/nocodb/stargazers) | TypeScript | AGPL-3.0 | Open-source Airtable alternative transforming any relational database into an interactive smart spreadsheet with API access and automated webhooks. |
+| **[Odoo](https://github.com/odoo/odoo)** | [![Stars](https://img.shields.io/github/stars/odoo/odoo?style=social&color=white)](https://github.com/odoo/odoo/stargazers) | Python / JavaScript | LGPL-3.0 | Open-source ERP framework with scheduled filter exports and cron mailers that automatically build CSV/Excel files and email them with permission checks. |
+| **[Huginn](https://github.com/huginn/huginn)** | [![Stars](https://img.shields.io/github/stars/huginn/huginn?style=social&color=white)](https://github.com/huginn/huginn/stargazers) | Ruby | MIT | Hackable automation system for building agents that monitor web data, query APIs, format spreadsheet/CSV data, and dispatch scheduled email digests. |
+| **[Metabase](https://github.com/metabase/metabase)** | [![Stars](https://img.shields.io/github/stars/metabase/metabase?style=social&color=white)](https://github.com/metabase/metabase/stargazers) | Clojure / TypeScript | AGPL-3.0 | Popular open-source BI tool featuring **Dashboard Subscriptions** that automatically send scheduled queries as attached Excel (.xlsx) or CSV files via email. |
+| **[Apache Airflow](https://github.com/apache/airflow)** | [![Stars](https://img.shields.io/github/stars/apache/airflow?style=social&color=white)](https://github.com/apache/airflow/stargazers) | Python | Apache-2.0 | Industry-standard DAG orchestrator. Schedules complex ETL pipelines that dump query results to Excel/CSV and dispatch reports using `EmailOperator`. |
+| **[ERPNext](https://github.com/frappe/erpnext)** | [![Stars](https://img.shields.io/github/stars/frappe/erpnext?style=social&color=white)](https://github.com/frappe/erpnext/stargazers) | Python / JavaScript | GPL-3.0 | Mature open-source ERP featuring native **Auto Email Reports**. Converts saved query reports into XLSX/CSV attachments delivered on daily/weekly schedules. |
+| **[Activepieces](https://github.com/activepieces/activepieces)** | [![Stars](https://img.shields.io/github/stars/activepieces/activepieces?style=social&color=white)](https://github.com/activepieces/activepieces/stargazers) | TypeScript | MIT | Open-source no-code workflow automation tool. Features pre-built pieces for Google Sheets, Microsoft Excel 365, SMTP, and interval-based cron schedules. |
+| **[LibreOffice Core](https://github.com/LibreOffice/core)** | [![Stars](https://img.shields.io/github/stars/LibreOffice/core?style=social&color=white)](https://github.com/LibreOffice/core/stargazers) | C++ | MPL-2.0 | Complete open-source office suite. Calc supports headless CLI macros (`--headless --convert-to`) for scripted spreadsheet report generation in cron jobs. |
+| **[ONLYOFFICE Community Server](https://github.com/ONLYOFFICE/CommunityServer)** | [![Stars](https://img.shields.io/github/stars/ONLYOFFICE/CommunityServer?style=social&color=white)](https://github.com/ONLYOFFICE/CommunityServer/stargazers) | C# / JavaScript | AGPL-3.0 | Collaborative office suite offering online spreadsheet editing, document management, and scheduled notification tools for team workspaces. |
+| **[mailgrid](https://github.com/bravo1goingdark/mailgrid)** | [![Stars](https://img.shields.io/github/stars/bravo1goingdark/mailgrid?style=social&color=white)](https://github.com/bravo1goingdark/mailgrid/stargazers) | Go | BSD-3-Clause | Ultra-lightweight email automation CLI written in Go. Ingests data from CSV or Google Sheets and delivers personalized emails with rate limiting and concurrency. |
+| **[AI_multi_AGENT_N8N](https://github.com/ziadnasar6-lgtm/AI_multi_AGENT_N8N)** | [![Stars](https://img.shields.io/github/stars/ziadnasar6-lgtm/AI_multi_AGENT_N8N?style=social&color=white)](https://github.com/ziadnasar6-lgtm/AI_multi_AGENT_N8N/stargazers) | JavaScript | MIT | Autonomous multi-agent automation architecture using local Ollama LLMs and n8n to parse Google Sheets records, trigger events, and send email digests. |
+| **[report](https://github.com/peterydd/report)** | [![Stars](https://img.shields.io/github/stars/peterydd/report?style=social&color=white)](https://github.com/peterydd/report/stargazers) | Go | Apache-2.0 | Production-ready Go utility designed to query databases (MySQL, PostgreSQL, Oracle), write Excel sheets, and email them on a schedule via Kubernetes CronJob. |
+| **[Auto-Excel-Reports](https://github.com/Bwhiz/Auto-Excel-Reports)** | [![Stars](https://img.shields.io/github/stars/Bwhiz/Auto-Excel-Reports?style=social&color=white)](https://github.com/Bwhiz/Auto-Excel-Reports/stargazers) | Python | MIT | Serverless report generation using Python `openpyxl` scheduled via GitHub Actions cron workflows (`0 0 * * *`) and delivered over SMTP. |
+
+---
+
+## 🛠️ Architectural Patterns & Stack Recipes
+
+Depending on your engineering constraints and privacy requirements, here are the three primary architectural recipes:
+
+1. **The Serverless Cloud-Native Stack** ☁️:
+   - *Workflow*: GitHub Actions / AWS Lambda scheduled by EventBridge.
+   - *Processing*: Python (`pandas` + `openpyxl` / `xlsxwriter`).
+   - *Delivery*: Amazon SES / SendGrid API.
+   - *Pros*: Zero server maintenance, free within GitHub Actions / Lambda monthly tiers.
+
+2. **The Open-Source Low-Code Stack** 🧩:
+   - *Workflow*: Self-hosted **n8n** or **Activepieces** on Docker.
+   - *Processing*: Built-in Google Sheets & Excel manipulation nodes with custom JavaScript/Python code steps.
+   - *Delivery*: Direct SMTP integration with company mail servers.
+   - *Pros*: Visual debugging, easy modifications by non-developers, full data sovereignty.
+
+3. **The BI & Analytics Native Stack** 📈:
+   - *Workflow*: **Metabase** (Subscriptions) or **Apache Superset** (Alerts & Reports).
+   - *Processing*: Direct SQL execution against production replicas or data warehouses (Snowflake, BigQuery, PostgreSQL).
+   - *Delivery*: Automated Celery workers compiling charts, CSVs, and Excel files.
+   - *Pros*: Best for business intelligence, interactive drill-downs, and automated stakeholder reporting.
+
+---
+
+## 🤝 How to Contribute
+
+Contributions are welcome! Help us keep this directory comprehensive and up-to-date:
+
+1. 🍴 Fork the repository.
+2. 🌿 Create a descriptive branch (`git checkout -b add-tool-name`).
+3. 📝 Add your tool to the table adhering to the schema (Platform / Project, Pricing / Stars, Limits, Core Capabilities).
+4. 🚀 Ensure links are working and pricing / limits are accurate.
+5. 📬 Submit a Pull Request with a clear description of the utility.
+
+Check out [Awesome Lists](https://github.com/ishandutta2007/Awesome-Awesome-Awesome) for more curated developer resources!
+
+---
+
+## ⭐ Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule&type=date&legend=top-left)
+
+---
+
+## 💖 Support
+
+If you find this repository helpful for your projects, operations workflows, or data stack research:
+- ⭐ **Star** this repository on GitHub.
+- 🍴 **Fork** it to build your own custom automations.
+- 📢 **Share** it with fellow developers, analysts, and operators.
+- ☕ **Buy me a coffee**: Support ongoing maintenance and open-source curation via the [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
+
+Thank you for supporting open-source software and transparent data automation! 🌟
+
+---
+
+## 📜 Disclaimer
+
+- This is a community-curated list for informational and architectural evaluation purposes.
+- Always ensure compliance with data protection laws (GDPR, CCPA) and email delivery policies (CAN-SPAM, SPF, DKIM, DMARC) when scheduling automated emails containing proprietary data.
