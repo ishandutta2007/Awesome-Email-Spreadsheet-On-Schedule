@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
   <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule?style=social" alt="GitHub Stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule?style=social" alt="GitHub_Stars" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule?style=social" alt="GitHub Forks" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Email-Spreadsheet-On-Schedule/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" /></a>
   <a rref="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
@@ -60,9 +60,9 @@ The table below catalogs leading SaaS platforms for scheduled spreadsheet and em
 
 ## 💻 Open-Source GitHub Projects
 
-The following open-source solutions provide self-hosted scheduled report generation, spreadsheet querying, and automated email delivery. Ranked in descending order by GitHub stars ⭐.
+The following open-source solutions provide self-hosted scheduled report generation, spreadsheet querying, and automated email delivery. Ranked in descending order by GitHub_Stars ⭐.
 
-| Project 📦 | Stars ⭐ | Primary Language 🖥️ | License 📄 | Overview & Scheduling Architecture ⚙️ |
+| Project 📦 | GitHub_Stars ⭐ | Primary Language 🖥️ | License 📄 | Overview & Scheduling Architecture ⚙️ |
 | :--- | :--- | :--- | :--- | :--- |
 | **[n8n](https://github.com/n8n-io/n8n)** | [![Stars](https://img.shields.io/github/stars/n8n-io/n8n?style=social&color=white)](https://github.com/n8n-io/n8n/stargazers) | TypeScript | Sustainable Use License | Fair-code workflow automation orchestrator. Offers native Google Sheets nodes, email delivery (SMTP/SES), cron triggers, and Python/JS transform steps. |
 | **[Apache Superset](https://github.com/apache/superset)** | [![Stars](https://img.shields.io/github/stars/apache/superset?style=social&color=white)](https://github.com/apache/superset/stargazers) | Python / TypeScript | Apache-2.0 | Modern enterprise business intelligence platform. Features scheduled email reports sending CSV, Excel, or dashboard snapshots via Celery workers. |
